@@ -1,0 +1,11 @@
+- While studying networking, let's first discuss the term network' or networking. A network means at least two or more devices connected 
+to share information and process data. Here, the devices connected are called a network. The process of communication between two or 
+more devices is called networking.
+- In technical terms, every single device that is present in a network is called a node
+- Types of Networks - 
+1. LAN: LAN stands for Local Area Network, which works between nodes that are present in a particular network and connected with wires. No outsiders are allowed to access communication or data from this type of network. e.g., A network of your university lab.
+2. WAN: WAN stands for Wide Area Network, which means the Internet we use nowadays to access information or data worldwide. It can also be used to connect two or more LAN's
+3. MAN: MAN stands for Metropolitan Area Network, which means a network that covers a city, a town, or a particular area that can be from 5 kilometres to 50 kilometres. This is larger than LAN and smaller than WAN
+4. PAN: Stands for Personal Area Network, which is used to establish a connection between a single person. e.g., a Bluetooth or NFC connection between a single device or person.
+5. WLAN: Stands for Wireless LAN, which is similar to LAN, but connects each node without a wired connection.
+Sometimes, the VPN(virtual private network) is also considered a type of network because it allows us to connect to our destination by creating a virtual and private network connection by masking our IP (Internet Protocol) to keep everything private.
