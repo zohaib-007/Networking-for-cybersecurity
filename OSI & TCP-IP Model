@@ -1,0 +1,64 @@
+Now, I will cover the most important topic in networking: 
+The OSI and TCP/IP models.
+While studying these two models, it's essential to understand why we examine them in networks.
+So today, the modern Internet works according to these models. The OSI model is actually a conceptual or reference model. We just study it to create large networks and know how these networks and nodes are connected, including today's Internet. This provides us with knowledge about the actual functionality of a network. Through this, it is also easy to troubleshoot a network. 
+On the other hand, the TCP/IP model is a theoretical and actually implemented model that allows the different nodes in a network to exchange information with each other wirelessly or with wires or even from the globe. 
+If we want to understand these two models in one line, then we simply say that the OSI model is for the logical understanding, and the TCP/IP model is for the actual implementation.
+In the OSI model, we cover the 7 different layers that interconnect with each other and do their own duty so the next layers receive the data and understand it. 
+The TCP/IP model is divided into the whole network into 4 different layers. Same as the OSI model, in the TCP/IP model, each layer can communicate with the next layer and the previous one.
+
+● OSI model:
+OSI means Open System Interconnect. The word "open" means any device or node in a network that is capable of accessing the information or data from anywhere. The word "interconnect" means the devices or nodes are connected.
+In this model, we study the 7 layers of data processing.
+We studied it from bottom to top, which means we talked about the 7th layer first and then the 6th, 5th, and so on. The reason behind it, when we send data or a request to a device or something, it starts to proceed in the sender device from layer 7 to 1, and when the receiver receives the data, the data proceeds from layer 1 to 7.
+The seven layers are:
+                       |                                   ^
+                       |                                   |
+              1. Application Layer                 1. Application Layer 
+              2. Presentation Layer                2. Presentation Layer
+              3. Session Layer                     3. Session Layer
+              4. Transport Layer                   4. Transport Layer
+              5. Network Layer                     5. Network Layer
+              6. Data Link Layer                   6. Data Link Layer
+              7. Physical Layer                    7. Physical Layer
+                       |                                   ^
+                       |___________________________________|
+
+7. Application layer: 
+        This is where the user directly interacts with the application interface to send data or a request. For example, we send an HTTP or HTTPS request to a web server; here, the interface of the web and our action to send a request and to work on related protocols are all handled in this layer. Similarly, for the SMTP request for the email server, the DNS request for domain resolution, etc.
+6. Presentation Layer: 
+        This layer is responsible for receiving data from the application layer and translating it for understanding between the network. It translates the data according to the application standard. It also handles the formatting of data, compression if data is large, and encryption/decryption of data for security purposes. The common protocols used by these layers are: SSL for website security, JPEG for conversions, etc.
+5. Session Layer: 
+        After the data is ready to send, we need to establish a session between the sending point and the destination. The session layer is responsible for establishing the session, maintaining it, and terminating it. This layer uses the NetBIOS, PPTP, RPC, etc. protocols. 
+4. Transport Layer: 
+        When everything is ready, we need to transport the data or request. The transport layer decides the reliable delivery path and breaks data into packets for safe and faster delivery. This layer also controls the flow of data, error checking and retransmission, and packet assembling. There are two important protocols used by this layer is TCP( Transmission Control Protocol) and UDP User Datagram Protocol). 
+        TCP is more reliable than UDP because it ensures the data is safe and sent without errors and losses of packets, but it is slower than UDP. UDP just provides us with a fast speed and doesn't care about the errors in data, loss of packets, etc. UDP is mostly used in live streaming and video calling.
+3. Network layer: 
+        This is where the data logical addresses (IP addresses) are assigned to the data for exact distinction. It also handles the best routes for data. The IPv4, IPv6, ARP, and BGP protocols are used in this layer.
+2. Data Link Layer: 
+        This layer uses the physical addresses of the device for identification or destination. The data here is broken into frames, and frames contain the physical address of the data and the sequence of the data. This layer removes all the errors from the data and makes it ready for final delivery. In this layer, the connection for the physical layer is also managed.
+1. Physical layer: 
+        Now, it is time to transfer the raw bit stream of data over the physical media. The data is ready to travel through the physical actual transmission methods of data. Here, data conversion is also performed, like if the transmission medium is wire, then the data is converted into electrical signals, and the same for WI-FI and fibre optic; the data is converted into waves and light signals.
+
+
+● TCP/IP model:
+This model is also called the basis of the modern Internet. TCP stands for Transmission Control Protocol, and IP stands for Internet Protocol. We study the theoretical and practical implementations of a model to establish a network. 
+We studied this model in 4 layers from bottom to top, meaning 4th, 3rd, 2nd, and then 1st.
+4. Application layer: 
+        This layer combines the L7, L6, and L5 of the OSI model. All the processes are the same as in the OSI model. This layer provides the interface between the user and the application, formatting the data and managing the sessions. This also works on the same protocols as in the OSI model layers.
+3. Transport Layer. 
+        This determines the reliable delivery method for data transmission and functions similarly to the transport layer of the OSI model.
+2. Internet/network layer: 
+        This determines the best routes and manages logical addressing, similar to the network layer in the OSI model.
+1. Network Access layer:
+        The functionality of this layer combines the 2nd and 1st layers of the OSI model. This manages the physical addressing and prepares the data for transmission through the physical media.
+
+- Comparison Table:
+| OSI Model Layer     | OSI Layer No. | TCP/IP Model Layer                                                                       | 
+| **Application**     | 7             | By combining layers 5, 6, and 7, it maps directly to the **Application** layer.          |
+| **Presentation**    | 6             | By combining layers 5, 6, and 7, it maps directly to the **Application** layer.          |
+| **Session**         | 5             | By combining layers 5, 6, and 7, it maps directly to the **Application** layer.          |
+| **Transport**       | 4             | Maps directly to the **Transport** layer.                                                |
+| **Network**         | 3             | Maps directly to the **Internet** layer.                                                 |
+| **Data Link**       | 2             | By combining layers 1 and 2, it maps directly to the **Network Access** (or Link) layer. |
+| **Physical**        | 1             | By combining layers 1 and 2, it maps directly to the **Network Access** (or Link) layer. |
