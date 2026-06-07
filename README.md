@@ -4,4 +4,4 @@ I am starting my journey from today towards the Cybersecurity field. The first s
 I will cover these topics:
 - What is networking actually?
 - Physical devices in a network/Networking
-- 
+- OSI & TCP/IP Model
