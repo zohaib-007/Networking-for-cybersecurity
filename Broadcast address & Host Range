@@ -1,0 +1,19 @@
+- Broadcast Address: This is another important thing in a network. This is not a device address or anything else. This is actually the last IP address in your network. For example, 
+  Network ID: 198.168.1.0 
+  Host ID: 198.168.1.23
+The address at the end of a network is a broadcast address. 
+  Broadcast address: 198.168.1.256
+That's why the first and the last addresses in a network are not available for host devices. 
+
+Now, why is this important?
+Suppose you want to send the same type of data to all the host devices in a network at the same time. We don't need to send this data one by one to all devices; we just send this data to the broadcast address, and this automatically sends to all present devices on a network.
+
+The other thing is when a device is lost on a network; suppose a device is trying to find a printer in a network. Now, this device is not trying to check each IP to find out the printer's IP. This device normally sends a request to the broadcast address, and the broadcast address shouts out for the printer on the whole network. 
+After this, the printer gives a sign of its presence and shares the IP address with the broadcast address. Lastly, the broadcast address replied to our request by sending us the location or address of the printer in the network.
+
+Host range: 
+The number of IPs that are usable for host devices like your router, mobile, printer, etc, is called the host range. In a network, the first IP for network ID, and the last IP is the broadcast address. All the middle IPs for the host devices and this is also host range.
+    Network ID: 198.168.1.0
+    Subnet mask: 255.255.255.0
+    Host range: 198.168.1.1 to 198.168.1.255.
+    Broadcast address: 198.168.1.256
