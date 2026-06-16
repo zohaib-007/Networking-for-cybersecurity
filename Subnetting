@@ -1,0 +1,20 @@
+- Subnetting:
+The process of slicing a huge network into small pieces is called Subnetting, and here is each network called subnet. Think of this as a network of a huge company that offers 200 connections, but connecting 200 devices with a network at a time becomes messy. We use the subnetting technique and divide this whole network into small pieces, like the two networks for each 100 host devices. This technique helps us establish better communication between devices and maintain security. 
+But here again, we use the subnet mask that describes an IP address with two parts and also tells us the range and number of IP addresses that would be offered by a network. It tells us where the host ID starts and where the network ID ends. When we divide a network, a subnet mask borrows a bit from the previous network and creates a new one. 
+  Like an IP address is: 198.168.1.50
+  The subnet mask is: 255.255.255.0
+After dividing it into two networks, it becomes two subnets.
+  First subnet network ID: 198.168.1.0
+  Second Subnet network ID: 198.168.1.128
+After this, the subnet mask will be:
+  First network mask: 255.255.255.128
+  Second network mask: 255.255.255.128
+
+There are two methods of dividing a network into subnets:
+   1. FLSM: The Fixed Length Subnet Mask divides a network into equal parts. Think a network offers 50 connections, and when we convert it using the FLSM technique, it will divide this network in equal two parts, which means 25 connections for dividing this network into two parts. This is actually not a good practice because when the other network needs only 2 or 3 connections, then the other remaining connections or IP becomes useless, and still, this is not a good network.
+   2. VLSM: In Variable Length Subnet Mask, we divide a network according to the exact needs of the network. This means that if we want to create two networks, the first needs 40 connections, and the second one needs 60 connections, and our total network capacity is 100 connections, then we divide this network using the VLSM technique. 
+
+Before this technique and CIDR, we divided a network using the rigid classes technique, in which we divided a network according to A, B, C, D, and E classes. Here
+  A= A huge network that offers more than 16 million IPs for its devices.
+  B= A medium network that offers almost 65000 host IPs.
+  C offers almost 256 connections or IPs, and the other D and E are used for smaller networks. Before subnetting, this technique fails because suppose a network is working with 256 host devices, and now the company has grown and wants to buy an upgraded class network, which is class B, which offers 65000 host IPs. Now, here, these may be too large for the present devices. Subnetting solves this for today's modern networks.
