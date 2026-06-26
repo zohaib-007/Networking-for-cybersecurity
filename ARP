@@ -1,0 +1,21 @@
+- ARP: 
+Think this is like a translator between your IP address and MAC address. ARP stands for Address Resolution Protocol, which means a layer 2 protocol of the OSI model. Suppose you are in a network and want to communicate with another host in the same network. Now you have the IP address of the host, but as you know, within the network, we need the MAC address of the destination host for communication. Now, ARP comes and helps us to find the MAC address of the desired host within a network. We use the ARP request and get the MAC address as a response. The ARP sent a broadcast (FF:FF:FF:FF:FF:FF)  packet and got the MAC address of the desired host. 
+The packet or request contains the following things: 
+1. Your IP 
+2. Your MAC
+3. Receiver IP
+4. Receiver MAC
+                                             Suppose:
+                                                      Your IP: 198.168.1.22
+                                                      Your MAC: 00-14-22-01-23-45
+                                                      Receiver IP: 198.168.1.34
+                                                      Receiver MAC: ?
+
+And here, when the broadcast was received by each host,  the host replied (by sending its MAC) whose IP matched the IP in our request, and finally, we got the MAC address.
+Now, suppose you want to know about the MAC address of a host outside of your network, and then, in this case, the scenario will be different. This means the source and the destination will connect through routers. 
+
+Types of ARP:
+1. Proxy ARP: Suppose two networks A and B. A host in network A wants to send a data packet to a host, which is in network B. But network B doesn't want to share the MAC address of its host devices. Here, network B uses the proxy server to hide the MAC addresses of all host devices. When the host from network A sends an ARP request to the proxy ARP router, instead of sending the destination MAC address, the proxy server send his own MAC address and handles the further communications on behalf of the destination in network B. This is mostly used for security purposes.
+2. Reverse ARP: This is actually a normal ARP method but in reverse order, meaning if you have the MAC address of a host device but want to know its IP address, then we use RARP. Source adds its MAC and IP address and destination MAC address in a request. In response, the receiver sent back his IP address. This is used to update the cache table to handle duplicate IP addresses.
+3. Dynamic and Static ARP: In dynamic ARP, the entries are added by the software automatically, while in static ARP, the administrator writes each IP address with its corresponding MAC address.
+4. Gratuitous ARP: In the gratuitous (without reason) ARP, the host asks for the MAC address of its machine. This means he sent a request to the whole network by writing his own IP address and demands for MAC address. In response, he got the MAC address of his machine. This method is used to announce his own MAC address to the other host or update the cache table.
