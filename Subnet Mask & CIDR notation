@@ -1,0 +1,55 @@
+- Subnet Mask and CIDR notation.
+These are two techniques for doing the same job.
+1.	Subnet mask:  
+The subnet mask decides the range and size of a network. It divides an IP address into two parts.
+The first three octals. e.g., 198.2.21 decides the network address, and the last part tells us the host number. A private IP address also has a subnet mask, which ranges from 0.0.0.0 to 255.255.255.255.
+This is the hidden part of an IP address. Need for a subnet mask because our systems only understand data in 0s and 1s.  For example, the IP address is 198.168.1.50, and the subnet mask is 255.255.255.0. When the request goes on the network, this mask is translated into 0s and 1s form, like for a subnet mask 255.255.255.0, the binary form is 11111111.11111111.11111111. 00000000. 
+To know about the range of a network, we count the 1s in binary data, which tells us the actual size of our network. Like in previous binary numbers, we have 24 1s, which tells us this is a small network, like for a home or for a small corporate office. If we look at the previous IP address, part 198.168.1 is the network ID, and the next number, like 50, is the host ID in the network
+2.	CIDR notation: 
+The CIDR stands for Classless Inter-Domain Routing. We need this CIDR notation because writing a subnet mask after an IP address is not a good practice. This method converts a whole subnet mask in binary to a single or double-digit form. Like in previous examples, for a subnet mask 255.255.255.0, when we convert it into binary form, this becomes 11111111.11111111.11111111. 00000000. 
+So we see this is too long for practical writing. So, the CIDR notation gives us a method to count only 1s in a binary string. As if we count the 1s in the previous binary form subnet mask, which is 24, we write this number with an IP address that tells us the IP of a host, as well as its range or size. Like the IP address 198.168.1.50/24, the last digits 24 are the size of a network. 
+The common subnet mask in CIDR form:
+
+/24 (24 ones) for a small network at the office or home, and offer 256 IPs.
+/8 (8 ones) very large networks that can accept more than 16 million host devices
+/16 (16 ones) is a medium network that accepts almost 65000 devices
+/32 (32 ones), that is a small connection between two devices.
+
+
+
+
+- Sub-netting:
+The process of slicing a huge network into small pieces is called Subnetting, and here each network is called a subnet. Think this is like a network of a huge company that offers 200 connections, but connecting 200 devices with a network at a time becomes messy. We use the subnetting technique and divide this whole network into small pieces, like the two networks for each 100 host devices. 
+This technique helps us establish better communication between devices and maintain security. 
+But here again, we use the subnet mask that describes an IP address with two parts and also tells us the range and number of IP addresses that would be offered by a network. It tells us where the host ID starts and where the network ID ends. When we divide a network, a subnet mask borrows a bit from the previous network and creates a new one. 
+                                                Like:
+                                                        IP address is: 198.168.1.50
+                                                        The subnet mask is: 255.255.255.0
+After dividing it into two networks, it becomes two subnets.
+                                                        First subnet network ID: 198.168.1.0
+                                                        Second Subnet network ID: 198.168.1.128
+After this, the subnet mask will be:
+                                                        First network mask: 255.255.255.128
+                                                        Second network mask: 255.255.255.128
+
+There are two methods of dividing a network into subnets:
+1.	FLSM: 
+The Fixed Length Subnet Mask divides a network into equal parts. Think a network offers 50 connections, and when we convert it using the FLSM technique, it will divide this network into two equal parts, which means 25 connections for dividing this network into two parts. This is actually not a good practice because when the other network needs only 2 or 3 connections, then the remaining connections or IP becomes useless, and still, this is not a good network.
+2.	VLSM:
+ In Variable Length Subnet Mask, we divide a network according to the exact needs of the network. This means that if we want to create two networks, the first needs 40 connections, and the second one needs 60 connections, and our total network capacity is 100 connections, then we divide this network using the VLSM technique. 
+Before this technique and CIDR, we divided a network using the rigid classes technique, in which we divided a network according to A, B, C, D, and E classes. Here
+A = A huge network that offers more than 16 million IPs for its devices.
+B = A medium network that offers almost 65000 host IPs.
+C offers almost 256 connections or IPs, and the other D and E are used for smaller networks. Before subnetting, this technique fails because suppose a network working with 256 host devices, and now the company has grown and wants to buy an upgraded class network, which is class B, which offers 65000 host IPs. Now, here, these may be too large for the present devices. Sub-netting solves this for today's modern networks.
+
+
+
+Host range: 
+The number of IPs that are usable for host devices like your router, mobile, printer, etc., is called the host range. In a network, the first IP for network ID, and the last IP address is the broadcast address. All the middle IPs for the host devices, and this is also the host range.
+
+
+Network ID: 198.168.1.0
+Subnet mask: 255.255.255.0
+Host range: 198.168.1.1 to 198.168.1.255.
+Broadcast address: 198.168.1.256
+
