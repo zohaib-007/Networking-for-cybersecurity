@@ -1,0 +1,25 @@
+- VLANs: 
+Stands for Virtual Local Area Networks. We actually isolate one physical LAN network into multiple virtual LAN networks. We set the number of host devices in each virtual network. 
+Example:
+Suppose you are in a building where almost 60 host devices are connected through a switch and communicate with each other normally. Here, you have 10 host devices for HR, 10 for the product managers, and the remaining for the IT desk. 
+As you know, sometimes we have to broadcast some type of data packets in a network, like ARP requests, then all the host devices get this data and process it accordingly, but what if the data just relates to the IT department or HR department only?
+ Or you don't want the other host to receive this data for security concerns, then here VLANs come in. 
+By implementing VLANs, we turn one physical 60-port switch into three separate virtual mini-switches. HR, Product Managers, and IT each get their own private network sandbox. They get full privacy, and their local network traffic never leaks out to disrupt the other departments.
+
+Why is this best for security purposes? 
+Suppose a hacker gets access to the guest Wi-Fi or one part of the VLAN, and then it's not a big deal for the hacker to reach the company server. But what if we isolate the network between the guest Wi-Fi and put a strong layer so the users or hackers don't cross it easily. Here are the VLANs that help us to do this task easily. 
+
+VLAN ID: 
+Every virtual network has its own special ID called the VLAN ID. Like for the above example:
+IT department: VLAN 40
+HR department: VLAN 10
+Product managers: VLAN 10
+
+Can a host from the HR department communicate with the host in the product manager department? 
+So the answer is no, because this now becomes a separate network, and we need a router or layer 3 switch for data sharing to the outside from a virtual network. This is also called inter-VLAN routing. 
+
+Access port: 
+A port where you can access all the host devices within a virtual network. The HR department has an access port from where we can talk with all the hosts inside the HR department VLAN. 
+
+Trunk port: 
+A physical port that connects all the VLANs in a physical local network through a single line. Think this is like bus topology, where all the host devices are connected to one main line. Similarly, here, all the virtual networks are connected with one main line called the trunk port.
