@@ -1,0 +1,27 @@
+- Switching:
+Now, we are going to talk about the data movement within a LAN network. This means that a switch is used to connect different hosts within a network. This is a layer 2 device and connects different hosts that communicate by using a Smart Switching Table or CAM (Content Addressable Memory) table with each other. 
+The alternative to switches is a traditional hub, which is used in a LAN network, but the problem is that when we have to share a data packet to a particular host, the hub broadcasts this data to all the present hosts in the network. The switch solves this problem and sends data packets only to the particular host whose MAC address matches the MAC address in its switching table. All the communications within a network are made by using the physical MAC address. 
+Now, let's suppose two computers, A and B, in a network. Computer A wants to send a data packet by putting its MAC address in the header of the data packet. The switch receives this data packet and forwards them to the destination host. But what if the switch doesn't know the MAC address of the destination host?
+Then here comes the concept of Unicast Flooding.
+Unicast Flooding: In this technique, the switch receives the data packet and creates a copy of the data. After this, it broadcasts this data to all the devices in the network, except where it came from. The destination device responds to this data packet and sends a green signal back to the switch. In this process, the switch finds the unknown MAC addresses and updates the CAM table for the next time. 
+
+Types of CAM or switch tables:
+1.	Static CAM: 
+The switch table is managed by an administrator. He enters the device's MAC addresses and the port numbers manually. Because we need two things for communication. The port number and the MAC address. 
+Like: 
+MAC:  AA:BB:CC:11:22:33 (PC-1)
+Port:   1 
+2.	Dynamic Switching CAM
+In dynamic switching, the CAM table is managed by the software itself by using these three ongoing phases:
+A. Learning phase: Whenever a device connects with the switch and sends data packets to the other devices, the switch learns about the MAC address of the destination and the source, and adds it to the CAM table for the next time. 
+B. Flooding: This is actually unicast flooding, which means the switch finds the unknown MAC address by sending a copy of data packets to all the host devices and specifies the port numbers also. 
+C. Forwarding: Once he finds the MAC address, he also adds his port number so that if another host wants to communicate with this host, the switch skips the flooding process completely.
+
+Different modes used by the switches: These are techniques how switch made communication between different hosts. 
+1. Cut-through mode: When the switch sees the MAC address of the destination host, it immediately sends the whole packet without waiting for the remaining data packets. It's actually read that the first 6 bytes mean the MAC address and start the forwarding process.
+2. Store and forward mode: In this technique, switches first store the data and then forward it to the desired destination host. This helps to check errors in data packets because when data is stored, it automatically checks the error and then forwards the data. 
+3. Fragment-free: In this mode, the switch reads the first 64 bytes of data and then forwards it without creating fragments of data. Because in Ethernet networking, the minimum healthy size of data is the first 64 bytes (512 bits). If there are any errors in the data, these are highlighted here, and the data is broken into tiny pieces called runt frames. These are considered garbage in data.
+
+Collision Domain: 
+The area or section where a collision happens when two devices start communicating through one shared line in a network. Think of this as a single one-line bridge. A car starts moving from the left side, and a car comes from the right side, and both collide in the middle of the bridge. Similarly, data collision occurs in the middle of the shared line, and the data is lost in this instance. 
+However, the modern switch solves this issue by dedicating a single port to a single host, ensuring accurate and fast movement of data without packet loss. 
