@@ -1,0 +1,39 @@
+- Routing:
+Now, we discuss how traffic actually moves between different networks or within a single network.
+This is another important concept in networking, where we discuss how data travels between networks or within a network. 
+
+Definition: The word routing means choosing or deciding the best and shortest path to travel the data between different networks or access the outside traffic. The router uses a default gateway to send and receive data from the outside of a network. 
+
+Why do we use routers?
+Think of a router as a device that helps in communication between different networks. Suppose 2 computers, A and B, want to communicate with each other. 
+Computer A IP: 198.168.1.21
+Computer B IP: 198.168.1. 23
+ Now, as you can see, the network part is the same, meaning both computers are on the same network, and we don't need to use a router here. We simply use a switch or a hub.
+ Now, Suppose:
+Computer A IP: 198.168.1.43
+Computer B IP. 167.168.1.21
+Here, the network parts are different, which means both are on different networks, and here, we actually need a router that uses a routing table that determines where data goes if the device is outside the network. In the routing table, he found the destination address, the next hop, and the default gateway (exit door) that helps a router to understand the destination of the packets accordingly.
+
+There are two types of routing methods: static routing and dynamic routing:
+1.	Static Routing: 
+A routing method in which a user decides which path should be used for which device to communicate with devices outside the network. In static routing, we have options to customise the routing table. This is useful for small networks, but not a good practice for large networks. In a static routing table, the admin decides which path can be used by which device on the network, and then we are restricted to use only these paths, even if the other best ones are available. 
+In the routing table, we set the destination address, the subnet mask, the next hop, and the exit interface
+Example: 
+Route to 10.0.0.0/24 via 192.168.2.1 means the for the device 198.168.2.1 a path sets which is 10.0.0.0/24
+
+2.	Dynamic Routing:
+ Here, the software itself writes the routing table and makes decisions that the device should use, which path to use for communication, using the spatial type of protocols like OSPF, RIP, BGP, etc. 
+Here again, we have two types of dynamic routing protocols, IGP and EGP:
+
+
+        1.	Interior Gateway Protocol (IGP): 
+The network that uses the dynamic routing techniques inside a network or between small networks uses the IGP protocols like RIP, OSPF, etc.
+RIP: Stands for Routing Information Protocol, which uses purely the hop count to decide which path should be used. RIP tries to select the shortest hop count for the movement of data packets. The word “hop count” means how many jumps he took for traveling with data packets from one network to another. Suppose a network wants to send a data packet to another network. 
+This network has two paths, A and B. In path A, we have 5 hop counts (routers), and in path B, two hop counts. Here, the RIP protocol chose path B even if it is slow because it uses fewer hop counts. 
+
+OSPF: Stands for Open Shortest Path First. Here, as it sounds like, he chose the shortest path first, then the other, if this is not available. 
+
+        2.	Exterior Gateway Protocol (EGP):
+            EGP is used when we want to connect two different large networks. This is mainly used to connect different WAN networks for the exchange of data packets. Like our ISPs use the EGP to communicate with each other. The only protocol used in this type is BGP.
+
+            BGP: Stands for Border Gateway Protocol. This is a very powerful protocol used to connect different large companies' networks. It uses special technologies to handle millions of routes at the same time. The main reason behind the only protocol used to connect huge networks is that it is very important while connecting different large networks, to speak the same language; when the protocol is different, we get trouble communicating.
