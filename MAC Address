@@ -1,0 +1,21 @@
+
+-MAC addressing: 
+The MAC stands for Media Access Control. The MAC address and the IP address are two different things. We already discussed the IP addressing in detail above.
+We just talked about the MAC address now.
+This is a unique 12-digit hexadecimal address (separated by colon or hyphen) assigned by an organisation at the time of manufacturing. This is the non-changeable physical address of a device in a network. This is very important when we want to communicate with devices in a LAN network.
+The MAC address works at the 2nd layer of the OSI model to send and receive data between devices. The first 6 digits give us the information about the manufacturer, and the last 6 digits for the network device. 
+Examples: 
+00:1A:2B – Apple Inc.
+3C:5A: B4 – Cisco Systems
+AC:67: B2 – Intel Corporation
+The full MAC address looks like:
+00:1A:2B:3C: 4D:5E (colon-separated)
+00-1A-2B-3C-4D-5E (hyphen-separated)
+
+Type of MAC addresses:
+There are 3 main types of MAC addresses:
+1. unicast MAC address: When we want a connection between just a server and a device, we use the unicast MAC address. This build connection is actually between two devices in a network.
+2. Multicast MAC address: When we want to pass a message between a small group of devices at a single time, we use this address. This starts from 01:00:5 and is used normally for streaming, video calling, and gaming. 
+3. Broadcast MAC Address (similar to Broadcast Address): The MAC address FF: FF:FF:FF:FF:FF is used for sending requests or data segments to each device present in a network at the same time. This is similar to broadcast IP addresses in a network, but this is used only for a local network.
+Can it be changed?
+Yes, the MAC address can be changeable, but just at the software level. We cannot change the real MAC address assigned by a manufacturer. Some particular software puts a layer of a random MAC address on the original one. Like in Kali Linux, we use the built-in feature (MAC changer) to change our MAC address temporarily at the software level.
