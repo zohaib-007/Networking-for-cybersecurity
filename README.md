@@ -8,3 +8,10 @@ I will cover these topics:
 - IP addressing
 - Subnetting
 - Broadcast address & Host Range
+- MAC address
+- Routing
+- Switching
+- Ports, services, and protocols
+- DNS
+- VLANs
+- Subnet Mask and CIDR Notation
