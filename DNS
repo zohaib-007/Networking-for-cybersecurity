@@ -1,0 +1,38 @@
+- DNS:
+Now, I will discuss the DNS, which is essentially a book that maps IP addresses to their corresponding names. DNS stands for Domain Name System. Before the DNS, the only way to browse a website or information on the Internet was to use the corresponding IP address to visit the specific site. 
+After the repeated increasing of the website in the whole world, it becomes difficult to remember the IP address of each one. The human mind interacts with pictures and letters easily, but remembering numbers, especially when there are too many, becomes difficult. After that, the system of domain names was introduced, where we gave a unique name to every IP address. 
+To find a domain with its name, we use the Domain Name System(DNS), which is responsible for giving us the IP address of the corresponding domain. 
+Let's suppose we try to access the Google.com website. There are two ways to access this site: one by its name, the second by its IP address (8.8.8.8). 
+When we try to access it by its name, the DNS system works for us to convert our name into the corresponding IP address and gives us back the IP to access the information inside this IP(website). 
+This process only happens when we try to access a website for the first time because a memory in our ISP has the IP address of the recently visited website, which is called cache memory. 
+Let's suppose we want to access the example.com website for the first time, then this process happens in two ways: the recursive method and the iterative method. 
+1.	Recursive Method:
+ Suppose you want to access example.com. When you type the name of the site, the DNS resolver takes our query and forwards it to the Root Server. The root server further starts to read the query from right to left, which means the .com gives the direction or address to the Root Server to the next destination, which is the Top-Level Domain. Here, the tasks are divided according to the top-level domains. 
+Like the .com, .edu, .pk are the top-level domains, for each, a query takes place in a different box where the .com is present, similarly for .edu and so on.  After this, the top-level domain reads the query and sends it to the Authoritative Server, which holds the real IP address. This gives the real IP address back to the top-level domain, the top level gives this IP address back to the root server, the root server gives the IP back to the DNS resolver, and finally, the DNS resolver gives this IP back to us.
+
+
+                                                           [ Our system asks for the IP of example.com] 
+                                                                                  |
+                                                                                  ▼
+                                                    [DNS resolver directs the query towards the root server] 
+                                                                                  |
+                                                                                  ▼
+             [Root server doesn't know the IP, but now, the way to find the IP, it again directs to the TLD server to resolve the query]
+                                                                                  |
+                                                                                  ▼
+                                            [Top-level domain divides the query according to sub-TL domains]
+                                                                          .com       .edu        .pk   
+                                                                            \          |           /
+                                                                                       |
+                                                                                       ▼
+
+                                                                  [ Authoritative Server (gives the IP)]
+Then, this process works in the same backwards direction and gives the IP back to the DNS resolver. 
+  
+
+2.	Repetitive method: 
+In this method, the same server works differently. When we send our query to the DNS resolver, it asks for the IP to the root server. The root server doesn't know the IP address, but it knows the IP address of the TLD server. The root server gives back (to the DNS resolver) the IP of the TLD server. Again, the DNS resolver talks with the TLD server for the IP address. The TLD server gives it back the IP of the authoritative server. 
+Finally, the DNS resolver contacts the authoritative server to get the IP address.
+Here, he got the desired IP address and gave it back to us. 
+This means that in the repetitive method, the whole query is handled by a DNS resolver, which resolves the query step by step by making a fresh query again and again until he get the IP.  
+
