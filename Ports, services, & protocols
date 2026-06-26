@@ -1,0 +1,57 @@
+- Ports, services, and protocols:
+
+This is another important concept in networking and cybersecurity/ethical hacking. During scanning a system, this plays an important part in knowing about which type of vulnerabilities and services exist. Ports and protocols allow us to collect some important information, like version, open ports, etc., about the system.
+1.	Ports:
+ Think of ports like a room inside a building. This is part of an IP address. You can also consider an IP address as a building and the ports as rooms inside the same building. There are almost 65535 total ports that exist in a system. Actually, every single service is like watching a video on YouTube, chatting with friends, getting emails from the office, etc., using a different port or room in the building. 
+The multitasking on a device is actually possible through different ports in a system. Some common ports in a system are 443 for HTTPS traffic, 8080 for HTTP traffic, and 25 for SMTP. Each port uses a specific protocol.  
+There are almost 0 to 1000 well-known and mostly used ports in a system. From 1025 to 49151, a registered port used by applications like port 8080 is the alternative of HTTP and 3306 for the MySQL server. The ports from 49152 to 65535 are used by the client side. Like you getting a response from a server. 
+Some common ports are:
+
+20     FTP Data
+21     FTP Control
+22     SSH
+23     Telnet
+25     SMTP
+53     DNS
+80     HTTP
+110    POP3
+143    IMAP
+443    HTTPS
+
+2.	Protocols:
+These are sets of rules and regulations used by a port that can send and receive requests. Think this is like a specific language used by ports when communicating with other devices. The number 443 is the port number, and HTTPS is the protocol used to load a website securely. Similarly, TCP and UDP are the transmission protocols for communicating between devices. 
+For sending an email, we use the SMTP protocol, and for converting the domain name to
+The IP address, we use the DNS (phone book), and so on.
+
+Services:                protocols:
+Web Server                HTTP
+Secure Web Server         HTTPS
+SSH Server                SSH
+Mail Server               SMTP
+DNS Server                DNS
+
+
+
+
+
+ These protocols are responsible for the reliable and secure data movement by checking the errors, lost packets, retransmission, and ordering the data.
+The TCP protocol is connection-oriented and uses the three-way handshake technique to talk with a device. 
+Send a SYN request and get an ACKNOWLEDGEMENT with SYN and last again SYN for ready to connect. We use it when we need perfection in data. This is much slower than the UDP used when data is important, like sending an email or chatting with a friend.
+On the other hand, when we all focus on speed, we use the UDP (Connectionless) protocol. Here, the protocol doesn't care about the order of packets, retransmission, or error checking, just sending data speedily. This is used for video calling, live streaming, live games, etc.
+ 
+3.	Services:
+ When we sent a request through a specific port using a specific protocol, the other side, which is waiting for the connection, is known as the service. This is actually a running task on the server side. Like in the HTTPS protocol, the web server is waiting for the connection, and the process running during this is called a service. 
+For example, we want to send an email to someone, and the process will be:
+Port: 25
+Protocol: SMTP
+Service: The mail server is ready for further processing
+
+Some common services and protocols are:
+
+Services:                protocols:
+Web Server                HTTP
+Secure Web Server         HTTPS
+SSH Server                SSH
+Mail Server               SMTP
+DNS Server                DNS
+
