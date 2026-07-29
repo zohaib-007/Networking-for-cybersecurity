@@ -1,0 +1,77 @@
+- IDS and IPS:
+Now, we are moving towards advanced network security. The previous security software or devices were firewalls, which we covered so far, but in this security operator, we have a problem: the firewalls check the packet headers and payloads and give access to enter the network according to predefined rules. 
+An attacker puts malicious code in an authentic service like HTTPS, SMTP, etc, and bypasses the firewall security. The attacker bypassed the firewall by sending too many requests from the same system. Now, we have advanced security operators who can secure a network by providing more control over network security. 
+
+IDS:  
+Before we move, let's understand what intrusion means. Unauthorised access that tries to steal, damage, and misuse the data from a computer system or a network.
+
+1. IDS (Intrusion Detection System): 
+This is a system that helps detect unknown or unauthorised attempts to enter a system or network. This only detects unknown entries, like someone trying to compromise the system or trying to steal data, etc, and informs the administrator. This system does not protect the network or device by itself. 
+Think this is like a person who gets locked inside a room, and he doesn't have keys; he just shouts out for help; he doesn't unlock the door itself. Similarly, this system just warns the administrator but doesn't stop the attacks. 
+Placement:
+                Internet
+                    |         
+                   IDS
+                    |               
+              Company network
+
+How does this work?
+Suppose a hacker wants to check the open ports in a system. He continually checks for open ports by sending packets. What the IDS sees:
+
+                        Port scanned 1, Ports scanned 2, then 3, 4..... up to 100 ports scanned in a very short time.
+                                                                      
+                                                                  |
+                                      
+                                Informed the administrator of this unknown behaviour and generated alerts
+                    
+                                                                  |
+
+                                                The attack continues until someone stops it. 
+
+
+Types of IDS: 
+There are mainly two types of IDS:
+1. Host IDS: A system that works for only a single host. It is installed on specialised systems, such as server computers, monitoring systems, and host computers. We can view the running processes, check the system log, and so on.  
+2. Network IDS (NIDS): An intrusion detection system that is used to monitor the whole network. It can detect unauthorised access, malicious activities, and attempts to scan the network, among other things. It can just detect and inform the administrator. 
+                Internet
+                   |
+               Firewall
+                   |
+                  NIDS
+                   |
+                 Network
+Actually, these IDS are not directly involved in the network. It's just like a security camera in a home that detects the activities and shows them to the controller but does not control the activities directly. 
+
+2. Intrusion Prevention System(IPS): This system works the same as the IDS, but instead of informing the administrator, it directly controls the activity by taking real-time actions. 
+Think of this as a security guard at the main gate of a house. If a stranger wants to enter the home, the guard can ask the person, "Who are you?" Why do you want to enter the home?
+If he feels something is suspicious, he immediately takes action and stops the person at the gate. 
+The IPS sits in the main line of the system because the data packets first get a verification stamp, then reach the destination in the network. 
+               Internet
+                   |
+               Firewall
+                   |
+                  IPS
+                   |
+                Network
+Types of IPS:
+1. Network IPS: NIPS detects and stops the whole network traffic. It can detect unknown traffic, malware, system behaviour, etc. After finding something suspicious and out of normal behaviour, it will detect it and stop immediately before it affects the system. 
+2. Host IPS: NIPS is used to protect only one system. This will be a server or a spatial computer in the network. NIPS does the same job as NIDS, but instead of informing the user, it automatically stops the attacks or manages the system security. 
+
+Types of detection methods:
+Both (IPS, IDS) have the same types of detection methods. The difference is that the IDS only detects and informs the administrator, while the IPS can stop suspicious activities by itself. 
+1. Signature-based detection: In this type, IDS/IPS detects suspicious attacks by matching the footprints of existing attacks. Whenever an attack happens, the IDS/IPS stores its pattern so that the system will detect and stop it. It works only for known attacks and fails when a new attack happens. 
+
+Example:
+A virus attack on a system, and the random string starts from H4G2GS#IW/J. The signature-based detection system detects this random string and stores it for future similar attacks. 
+2. Anomaly-based detection: This detects what normal behaviour looks like. If something happens that is unusual, the system detects it and generates an error. 
+Suppose:
+Normal traffic on a server is one thousand per hour; after some time, it goes to 5 thousand per hour. This looks unusual, and an anomaly-based system detects it as a possible DoD attack. 
+3. Behaviour-based detection: This system keeps a record of normal behaviour, such as a normal amount of incoming traffic in a network, user login time, working hours, etc.
+
+      Example:
+Before working hours, someone tried to access the company database and made 200 wrong password attempts within an amount of time. The behaviour-based system detects it and generates an alert or stops possible brute-force or password-cracking attacks.
+
+The limitations of these systems (IDS/IPS):
+1. False positives: Sometimes things go wrong, but the IDS/IPS feels everything is normal.
+2. False negatives: Sometimes everything is normal, but the system flags a threat. 
+For example, the normal behaviour for the system is 30GB/hour usage. During updating or creating a large copy of data, the system pops up an error that something went wrong.
