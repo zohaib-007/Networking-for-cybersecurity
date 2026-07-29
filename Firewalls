@@ -1,0 +1,66 @@
+- Firewalls:
+This is another important software or device for network security. We use firewalls to keep our network protected from unauthorised access. We monitor all traffic and set rules to drop and reject connections. 
+
+Definition: A wall that is placed between the access port and the external network. This is essentially a security guard for the entrance gate of your network, which checks all incoming/outgoing traffic and filters it according to predefined rules set by an administrator. 
+Basic firewalls can check only the packet headers and allow data movement by checking the IP address and port numbers, but modern firewalls offer deep packet inspection, which provides the facility of checking the actual payloads inside the incoming/outgoing data packets.
+The firewall placement in a network will be:
+Internal traffic (LAN network)  --> Firewall --> External traffic (Internet) *Vice Versa
+
+Host firewall and network firewalls: 
+This can be for a single host and for a whole network. The Windows firewall by Microsoft on our computer is actually software that helps to block malicious traffic from external sources. 
+The network firewalls can monitor the whole network and provide us with comprehensive features to customise the incoming/outgoing traffic. This would be software, hardware, or a mixture of both. For the best security experience for a network, we use dedicated hardware firewalls and manage its thorough dedicated OS. 
+
+Types of firewalls: 
+1. Static Packet Filtration Firewalls: This is the most common type of firewall at layer 3 (OSI model) and is also known as a stateless firewall. This means it treats each incoming/outgoing packet separately, even if the packets' destination/source addresses are the same every time. It manages the connections only by checking the headers of the packets. In packet headers, it checks:
+Source IP
+Destination IP
+Source Port
+Destination Port
+Protocol type
+
+It can block specific IPs, ports, and protocols. 
+Suppose: 
+Destination port 443:        Allow
+Source IP 34.53.26.7:        Deny
+FTP:                         Deny/drop
+
+In this example, only the destination port 443 is allowed; traffic from the source IP 34.53.26.7 is rejected, and the specific protocol FTP is denied or dropped. 
+The word Drop means to reject the packet without sending the signal to the user, and Deny or reject means to reject the packet and also inform the user with an error message. 
+
+2. Stateful inspection firewall (layer 4): This firewall uses a state table that holds the record of the active connections and allows the incoming traffic based on the outgoing traffic.
+User --> Firewall--> Google.com 
+means the user sends a packet towards the Google server, and obviously, when Google replies, the traffic will be authorised, and the firewall will check the state table and allow the incoming packets automatically. This is less secure because it keeps an eye on the active connections and doesn't care about the payloads inside the data packets. 
+3. Proxy firewalls: This is the layer 7 firewall. It is placed between our network and the external network. Instead of each traffic going directly from your device to the destination, the firewall catches this first and checks for the authenticity of data packets, and then these forward the destination.
+                                                                 
+                                                                     Computer
+                                                                        |
+                                                                        ▼
+                                                                     Firewall 
+                                                                        |
+                                                                        ▼
+                                                                      Website
+
+This means that all the outgoing traffic and incoming traffic must interact with the firewall first. No one knows about the internal traffic.  This can perform packet filtering as well as handle other protocols like HTTP, DNS, HTTPS, etc, at the application level. 
+4. Next Generation firewall(NGFW): This is the firewall that is used by enterprises nowadays. This provides each and every feature that is useful for network security. From basic packet filtering to deep packet inspection, intrusion detection, packet analysis, link filtering, and virus/malware detection. 
+This provides comprehensive security features and covers the 3 to 7 layers of the OSI model.
+5. Hybrid Firewalls: This combines the 2 or more firewalls in a single LAN network. This provides us with multiple security features for each virtual LAN in a single physical network.
+
+Working of a firewall: 
+1. Monitor traffic: The firewall monitors the incoming/outgoing traffic and decides which allows the network and which does not, according to the rules of the firewall. It can check the packets for basic filtering and perform deep inspections to detect unauthorised access and malicious payloads. 
+2. Rules check: After checking the packets, the firewall checks for the rules of data movement. The rules tell the firewall which type of traffic should pass and which type of traffic should not. These can be customised by the administrator and set by default.  
+The default rules:
+1. Allow rule: Allow the specific traffic and block all the other traffic, incoming or outgoing. This is more secure
+
+Allow          port 443
+It allows only HTTPS traffic for the network. All the other traffic, FTP, HTTP, SMTP, etc, will be blocked automatically.   
+2. Deny Rule: This is the opposite of the Allow rules, which means it denies only the specific traffic and allows all other traffic to carry about the payloads inside the data packets. This is less secure, that's why.
+3. Drop rule: This rejects the traffic without showing any error to the user.  
+3. Action: After checking the rules, the firewalls allow, drop, and deny the traffic according to the rules. 
+
+How hackers can abuse the firewalls:
+Firewalls set the security policies for inbound and outbound traffic, but still, the attacker can intercept the traffic and steal the data.
+1. Weak configurations: Sometimes, the administrator sets the wrong rules or mismatched rules, and the attackers, by continuously performing different types of attacks, find cracks in the weak configuration and enter the network.
+2. DoS attacks: Suppose an administrator allows HTTPS traffic. The attacker sends the HTTPS request continuously until the software or hardware firewall crashes. After this, he can enter the network easily.
+3. Security patches: By finding the vulnerabilities and loopholes in the firewall software, the attacker can hack the firewall, change its rules, and interrupt the traffic. That's why we immediately update the software and continuously check the rules.
+
+To conclude, the firewall is a basic and fundamental need for network security. The repeated increases in digital networks and remote networking require us to use firewalls to prevent unauthorised access and manage the incoming/outgoing traffic.
