@@ -16,3 +16,9 @@ I will cover these topics:
 - VLANs
 - Subnet Mask and CIDR Notation
 - ARP
+- NAT & PAT
+- Network Monitoring Systems
+- VPN's
+- Firewalls
+- IDS & IPS
+- Cloud Security
