@@ -16,12 +16,7 @@ Public IP:    175.23.1.45 (Router)
 
 
 When the desired website sends the response back, the NAT again changes the public IP to a private IP, and the router sends the packet accordingly. 
-There are two types of NAT:
-      1. Static NAT: This is a one-to-one relationship, which means one private IP address uses one public IP address. This is mostly useful for servers like web servers, VoIP, SSH, etc, which means use where we need consistent connectivity for the external clients.
-For example, a server's private IP is 198.168.1.50, and the state NAT mapped it to a public IP 54.198
-24.34 permanently; after this, all the traffic from   54.198.24.34 goes to 198.168.1. and vice versa. 
-      2. Dynamic IP: Now, here, our router uses a huge amount of private IPs and assigns them whenever a device connects. It is possible that, when you connect again to the same router after some time, your private IP address will be assigned to someone else because when a device cut their connection, the IP address will be reserved for another host device. 
-Therefore, you get a new IP whenever you connect to the network again and again.
+
 
 But in NAT, we have a problem: 
 Suppose two devices, A and B, are on the same local network, having private IPs 
