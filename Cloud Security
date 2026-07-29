@@ -1,0 +1,37 @@
+- Cloud Security:
+Now, we will discuss the most important topic in cybersecurity. To understand the term Cloud Security, first, let's understand Cloud Computing:
+The delivery of computing services like programs, software, online storage, databases, networking, etc., over the internet without building your own personal storage or databases.
+Suppose you want to host a website and store your data online, which is always available and error-free, 24/7. For this, you should build your own server and physical storage location. You would build a full system that works perfectly, and it will definitely be costly.
+But you have another way that would be safer and easier. In this method, you just rent your own server and storage location from the cloud service providers, and this method is very low cost. You just pay for what you have to use. The big cloud service providers like AWS ( Amazon Web Services), Google Cloud Platform, Oracle Cloud, etc, rent out to you a shared, dedicated, or mix of both for your computing system. 
+Now, let's move on to the term Cloud Security:
+As you know, any service that is connected to the Internet always has security concerns. Similarly, cloud computing, which totally relies on an Internet connection, also has security concerns. Protecting these computing systems, software, and services from unauthorised access and data loss is known as cloud security. 
+
+Core Technologies of cloud security:
+1. IAM (Identity and Access Management): Before you connect with a cloud service, the platform checks who you are, whether you need this access or not, what type of data you would access, multi-factor authentication, and the particular parameters by which you manage things (least privilege). These techniques are used to secure the user data and maintain platform security.
+2. Shared Responsibility: The service providers are responsible for physical security, data storage, networking, and systems maintenance, so you should be able to access the data whenever you need. On the other hand, the user is responsible for role decisions, passwords, user accounts, etc. 
+In short, both the service provider and user help each other and share responsibility to maintain the end-to-end security of the whole system. 
+3. Data Encryption: The data stored in the cloud in backups, online storage, and  physical storage should be encrypted (in a non-readable form) to maintain the security parameters even if someone gets access, unfortunately
+4. Multi-factor Authentication (MFA): The cloud administrator accounts' access should depend on multi-factor authentication. This means a double check by the cloud service when someone tries to get access to the cloud platform according to his role.  
+5. Zero Trust Technology: The most modern cloud platforms work on a zero trust framework. That means every request should treat a new. It should be checked, evaluated, and then given access accordingly. 
+
+Types of Services Models
+There are three main types of models:
+1. PaaS: Suppose you want to move from one location to another by renting a car. You rent a car from a rental company simply, and you just drive the car to reach the destination; you do not need to worry about the fuel, maintenance, registration, insurance, etc.; you just pay, get a car, set your hand on the steering wheel, and enjoy the journey. 
+Now think about the PaaS (Platform as a Service) in which you get a platform to manage your resources. You just load your code and enjoy the service. The providers give you all the other resources like networking, storage, databases, etc. You just put your code in and get your work done. 
+The best example is the Google App Engine and AWS Elastic Beanstalk. 
+2. SaaS: Understand it by the same example. Let's say you don't want to drive; you do not want to take the headache of anything; you just want to reach your destination. For example, you just get in the car ( like InDrive or Yango service in Pakistan), set your pickup and destination location, and pay according to the distance you have travelled so far. 
+Similarly, you get software as a service from the cloud service provider. You just use the software and don't need to build the backend, code, database, network, etc. You just use the service and pay for what you use. Netflix and Google Drive are examples of SaaS.  
+3. IaaS: Suppose you rent an empty house from a rental company. Now you need all the equipment that is needed for living. The rental company is just responsible for the maintenance of the house. This means you get just the infrastructure and manage all the things inside by yourself. 
+Similarly, you get an empty infrastructure for your services and manage it according to what you need. The providers are just responsible for 
+networking, databases, and physical security of the infrastructure. Like Amazon EC2 and Microsoft Azure VMs are examples of IaaS. 
+
+Types of Cloud Services: 
+1. Private Cloud: In this, you get a separate cloud platform in which you can manage everything according to your needs. This is normally more costly than the shared cloud and is used by big companies that need a separate private system. 
+2. Shared Cloud: You buy a cloud service like Google Drive storage, which works on the same infrastructure, but the users' data is isolated. 
+3. Hybrid Cloud: Suppose you need private storage for your sensitive data, but you also need a service for normal daily tasks; in this situation, you will buy a hybrid cloud and use it accordingly. 
+
+Common risks with cloud security:
+1. Weak passwords: A password that is easy to guess or broken by a simple brute-force attack can lead to a huge data breach. So, we always use strong passwords and multi-factor authentication. 
+2. Inside threats: Employees sometimes help attackers steal data by clicking on fake emails, visiting a malicious site, etc. So, always train the employees and use the least-privilege methods
+3. API attack: Weak APIs also help attackers attack the whole system by just compromising the API service. Always use an authentic or authorised API for your cloud services. 
+4. Malicious/malware attacks: A malicious file or malware can also lead to a compromise of the system for a hacker.
