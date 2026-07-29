@@ -1,0 +1,75 @@
+- VPN:
+This is also an important topic because most enterprises and companies in Pakistan use VPNs for secure data transmission between users and the company database. This also helps to put a security layer between two different networks. 
+
+Definition: A Virtual Private Network (VPN) is the process of encrypting data and making a secure connection through a secure tunnel so that the data remains secure from the outside network or the Internet
+ 
+Suppose you are connected to your local network or to a library network, and you want to access sensitive information from the Internet, such as performing a bank transaction. Here, any other person on the same network can steal your credentials and track your online activities.
+The request process will be:
+Your phone --> Local network --> bank server
+
+But here, a VPN helps us and keeps our online records secure by making it encrypted and establishing a secure connection through a tunnel.
+After activating a VPN, the request process will be:
+
+Your device --> VPN --> Encrypt the data --> pass through a secure tunnel --> VPN server --> desired destination
+This is how a VPN works, actually.
+
+Important terminologies related to a VPN:
+      1. Encryption/decryption of data: The process of changing readable data into an unreadable form is called encryption, and changing this same unreadable form to readable data is called decryption. A special key is used to decrypt this data. Both processes are handled by the VPN application automatically. 
+This is a similar process on modern social applications, like WhatsApp, which offers end-to-end encryption, which means no one can see your data except the sender and the receiver. 
+The VPN does the same job; it encrypts our traffic and makes it more secure so that if anyone gets access to the data, it is useless until he gets the decryption key. 
+
+Non-encrypted data: 
+Username: Zohaib
+Password: Zohaib1234
+
+Encrypted Data: 
+Username: $%19@$!%14
+Password: %$td_€twi%#
+Something looks like.
+We need a spatial key to see the encrypted data in its original form. 
+
+      2. VPN tunnel: This is the path through which our data moves from source to destination. Think of this like a highway where cars move normally, but a special care-packed in a big container moving towards the destination; no one can see the car inside the container; they see the container only. Similarly, the VPN tunnel wraps our data in a tunnel so that no one on the same network can access it. 
+If a network operator scans the network, they can see data packets moving, but he doesn't access the data inside them. 
+There are two types of VPN tunnels:
+            1. Split Tunnel: Suppose you want only the specific data to move through the VPN and the rest of the data to move normally. This means you want to access the company database; the only data packets related to the company database pass through the VPN, and the other packets move normally without VPN integration. This becomes less secure if the configuration doesn't apply accurately. 
+
+Data packets and credentials related to the company --> VPN --> company server
+
+You search for Facebook --> ISP --> Facebook server
+
+            2. Full tunnel: All of your traffic will move through the secure VPN tunnel. 
+Your network --> VPN tunnel --> Internet
+
+    3. VPN Server: The place where our data moves after leaving the source host. When we access sensitive data, the data is encrypted before moving to the VPN server. Here, data is decrypted and forwarded to the desired destination. This provides an extra layer of security because our ISP or network provider don't know about our location because they see the data originating from the server of the VPN. 
+This means it changes our location also.
+Computer --> Encrypted VPN tunnel --> VPN server --> Desired Destination
+    4. Authentication: This is the process of checking which users actually get access to the particular data. It integrates the password and username before the user uses the VPN service.
+
+Main Types of VPNs:
+1. Remote Access VPN: This is a type of VPN that provides a secure connection within a local network. This is normally used for remote tasks. Suppose you are at home and want to access your company server remotely. Then, you need a remote access VPN for a secure connection.
+
+Your local network --> Secure VPN Tunnel --> VPN server --> company server 
+
+2. Site-to-Site VPN: This is used when we want to secure all the traffic between two different networks. Enterprises and companies use it between their different branches for secure communication. This is also called router-to-router VPN because when we connect two networks, we need a router on both networks; this VPN is placed between these routers for secure VPN based communication. 
+Router 1 --> VPN --> Router 2
+
+VPN protocols:
+Think of these as the protocols in a network work for, how data moves, and how connections are made by using specific rules and regulations. Similarly, the VPN protocols decide the delivery of data, encapsulation, encryption, and tunnelling, and decide which ports should be used. 
+The VPN and the Protocols are two different things; the VPN itself provides us with an infrastructure and guides the system on how this works when a device or network tries to connect.  While the protocols are the inner system that handles the actual connection. 
+Some common protocols, such as PPTP, IPsec, OpenVPN, and WireGuard, are used by modern VPNs.
+
+Features/benefits of using a VPN:
+1. Secure Connection: By using a VPN, we can browse the Internet without being tracked. VPN wraps our standard online traffic into a secure tunnel, and through the encryption process, it makes it unreadable for our Internet provider. Suppose someone gets access; they still need a special key to decrypt this data to make it readable. 
+VPN also masks our IP into a public IP address that points to the traffic coming from the VPN server, which means protecting our location, IP address, and data packets on the Internet. 
+2. Bypass Region Restrictions: VPN also provides the benefits of getting access to the kind of data that is not available in our region by changing our location. This means it masks our IP and is set according to where the particular content is available. 
+3. Site-to-Site protection: Suppose your company has two networks, he want a secure communication between these two networks.VPN provides this facility and also creates a secure communication channel between two networks. 
+Network A --> VPN --> Network B and vice versa. 
+4. Remote Access protection: Suppose you are at home and want to access your company database, or your company demands work from home, then the VPN again helps the user by providing a secure private connection for remote work. 
+
+How a VPN actually works:
+The VPN works in four steps whenever a device tries to connect to the Internet through the VPN.
+1. The digital Handshake: When we open a VPN application and push the connect button, the process behind this button is actually a digital handshake. In this process, the user asks for the VPN server to use the connection protocol service, like AES 256(encryption standard). After this, the VPN and our device both make a cryptographic symmetric key that is used to encrypt and decrypt the data at the server and the user end. 
+Both share public keys, and the VPN starts to serve. 
+2. Encapsulation: This is the process by which the VPN wraps our data in a secure tunnel so that no one on the same network can access it. By putting an extra layer of security on our original data packets, encapsulation makes it non-traceable by other users.
+3. Encryption: In this step, our data turns into a raw format and becomes unreadable without a special key, which was generated at the handshake process. This uses a symmetric protocol to encrypt data like ChaCha20 or AES 256, which is used to generate the unreadable ciphertext 
+4. Decryption and forwarding: Again, when data is ready for forwarding, this raw data turns into the original form and becomes exactly like when it was generated from the user device. The destination gets the original data packets, and when the VPN gets a response back, the encryption/decryption procedure works inversely.
