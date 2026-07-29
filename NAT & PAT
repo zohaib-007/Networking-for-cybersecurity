@@ -1,0 +1,57 @@
+- NAT & PAT
+Now, we will discuss the routing process in today's modern routers. We cover how private and public IP work together to give us access to the global Internet.
+
+1. NAT: Stands for Network Address Translation. This is the process of changing the IP addresses while the data moves between networks. Suppose you are on a local network where you have a private IP address, 198.168.1.50. When you want to access a website using your private IP, the request goes from your router to the desired web server. 
+When the server tries to respond to the related IP address, it isn't able to map the IP address, which means it doesn't know about your private IP because the private IP address only works within the network. 
+Here, NAT solves this problem and converts a private IP address to a public IP address so that you will be able to access the Internet. Actually, your router has only one public IP. When you send a request to access the Internet, the request goes from your mobile to the router. The router remembers your private IP and puts your request on the public IP address. 
+After getting the response, the router again sends you the response by matching your private IP address.
+
+Private IP:    198.168.1.32 (Host)
+                     |
+                     ▼
+                    NAT
+                     |
+                     ▼
+Public IP:    175.23.1.45 (Router)
+
+
+When the desired website sends the response back, the NAT again changes the public IP to a private IP, and the router sends the packet accordingly. 
+There are two types of NAT:
+      1. Static NAT: This is a one-to-one relationship, which means one private IP address uses one public IP address. This is mostly useful for servers like web servers, VoIP, SSH, etc, which means use where we need consistent connectivity for the external clients.
+For example, a server's private IP is 198.168.1.50, and the state NAT mapped it to a public IP 54.198
+24.34 permanently; after this, all the traffic from   54.198.24.34 goes to 198.168.1. and vice versa. 
+      2. Dynamic IP: Now, here, our router uses a huge amount of private IPs and assigns them whenever a device connects. It is possible that, when you connect again to the same router after some time, your private IP address will be assigned to someone else because when a device cut their connection, the IP address will be reserved for another host device. 
+Therefore, you get a new IP whenever you connect to the network again and again.
+
+But in NAT, we have a problem: 
+Suppose two devices, A and B, are on the same local network, having private IPs 
+198.168.1.50 and 198.168.1.52
+Now, for example, both host devices want to access the same website at the same time. The query goes to the router, and NAT translate their addresses to one public address. But when the website responds back, the router gets confused about which packet belongs to which host device. Because the website only sees your public IP.
+
+2. PAT: Here, the advanced NAT means PAT (NAT overload) comes in. This stands for Port Address Translation. 
+This technique translates your private IP to the public IP as well as assigns a unique port number. This port number will also be changed when the router gets a response back from the server, and this is known as the outside port number. 
+Now, let's suppose two hosts, A and B.
+
+The private IPs
+inside private IP A: 198.168.1.3     inside port: 4100
+inside private IP B: 198.168.1.21   inside port: 4100
+
+After PAT translation:
+Outside Public IP A: 23.43.155.21    outside port: 10001
+Outside Public IP B: 23.43.155.21       outside port 10002 
+
+After getting a response back:
+Destination IP 23.43.155.21: 10001 and 10002
+By matching the port number at the router end and again translating the IPs, both packet sets are delivered to the same outside ports. 
+
+Here, as you see, the inside ports 4100 for both hosts are the same. That's why assigning unique outside ports is crucial. Otherwise, the packet is again lost due to unclear destination ports. 
+This happens commonly when we try to browse the same type of service; the outgoing service uses the same ports by default. 
+
+Here, the port number is a specific room number, and the public IP is the house number. This means two systems with one public IP address get a response from the Internet simultaneously by attaching the port numbers. 
+
+Example:
+Why is the port number important?
+System A wants to access Google.com by having the public IP 23.43.155.21 and port number 4300. Similarly, System B wants to access Facebook.com by having the same public IP and port number 5400
+When both servers send a response back, the traffic will be divided according to the port numbers. So, systems have different responses. 
+
+To conclude the PAT, this is a process using one public IP address by many devices and separating them by giving unique port numbers to use the connections.
