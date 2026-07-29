@@ -1,0 +1,29 @@
+Network Monitoring System:
+Suppose you have a network of 50 computers  and you want to monitor the use of data, check whether the connections are secure or not, monitor malicious activities, keep an eye on authorised access, etc 
+Is it possible to check each system for monitoring these activities?
+Of course not. Here, network monitoring systems come into play. In this system, we use software and tools to keep an eye on the activities of the entire network from one place. This system allows us to check the performance, health, and security of the system so that it is easy to stop attacks and unauthorised access. 
+
+There are two types of network monitoring methods:
+1. Active monitoring: In this, the administrator checks the device availability or alive status by sending packets. 
+ping ---> computer 4
+Computer 4 replies with its IP, which means the device is online. 
+The administrator uses different protocols or tools for active monitoring. Suppose an administrator uses Wireshark to capture the packets and analyse them actively. He can even check the actual payloads for high-end security purposes. 
+2. Passive Monitoring: In this monitoring method, the administrator just observes the behaviour of the devices, checks health and performance, etc.
+He just checks the system without generating new data packets. The SNMP protocol is used to check RAM usage, memory usage, temperature checks, etc, which means this protocol works passively. 
+
+What does a monitoring system monitor?
+Now, we are going to talk about what a monitoring system actually monitors in a network.
+1. Alive status: The system actively checks the online status of the device. It sends data packets to the devices and checks whether these are reachable or not.
+Sends data packets to the devices on the Internet.
+✅️ Router Responds
+❌️ Server down or not responding
+✅️ Computers are active
+✅️ Firewalls work properly
+Here, he will monitor that the server goes near offline or overloaded.
+2. Bandwidth usage: Bandwidth means the amount of data passing from a network in a certain time. For example, a WiFi is working on 100 Mbps, which means its bandwidth is 100 Mbps. The normal usage is 40 Mbps, but suddenly, it goes to 90 Mbps, which means high bandwidth usage.
+3.  Throughput: Throughput means the amount of data that is successfully transferred in a certain frame of time. From the above example, the wifi is 100Mbps, which means it can transfer 100Mbps of data in 1 second. But what if the transferred data is 75mbps? This means that some data is lost, which shows the throughput of that network. 
+This will generate an alert for the administrator with low throughput, indicating that data is lost during communication. 
+4. Network speed(latency): This is the time that data takes to move from one node to another. This is normally measured in ms (milliseconds).
+Suppose, normally, the data movement between two devices takes 5 ms, but suddenly, it takes 100ms; that shows a high-latency error on the administrator screen.
+5. Security alerts: Suppose in a network a server gets 20 requests per minute, but suddenly, it gets 1000 requests per minute. In this situation, the monitoring system alerts the administrator to a possible flooding attack. 
+Another example is that if an unauthorised profile is continuously attempting to access the company website admin panel by trying different combinations of the password, which means a possible brute-force attack is being performed without permission. The administrator also gets an alert about this attack.
